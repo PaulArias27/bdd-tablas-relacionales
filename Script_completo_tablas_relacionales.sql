@@ -85,3 +85,21 @@ FROM libro_autor la
 INNER JOIN autores a
 ON la.la_autor_id_fk = a.id
 GROUP BY a.nombre;
+
+-- modificacion
+ALTER TABLE libros
+ADD COLUMN precio DOUBLE PRECISION;
+
+UPDATE libros
+SET precio = 25.50
+WHERE codigo = 'L001';
+
+UPDATE libros
+SET precio = 40.00
+WHERE codigo = 'L002';
+
+UPDATE libros
+SET precio = 35.75
+WHERE codigo = 'L003';
+
+SELECT titulo,precio FROM libros;
